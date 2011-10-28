@@ -1,0 +1,26 @@
+= Artesia Ruby Gem
+
+The Artesia Gem provides integration access to the Artesia DAM.
+
+== Dependencies
+
+* mechanize
+
+== Installation
+
+  gem 'artesia', :git => "git://github.com/kalinchuk/artesia.git"
+
+== Quick Start Example
+
+  require "rubygems"
+  require "artesia"
+	
+  artesia = Artesia::Connection.new(:username => "", :password => "", :host => "http://company.com/url/", :session => "")
+
+  results = artesia.api.advsearch(:asset_name => "car") # => [{:asset => "car", :asset_id => ... }]
+
+== Notes
+
+This is the first version of the gem. Since Artesia DAM does not have an official API, we had to go around that and use a different method which is not as great...but it works. Currently, I can't figure out how to get the correct session ID when logging in so we have to set the session manually. If you wish to contribute, please do.
+
+
